@@ -1,8 +1,9 @@
 # Dobby
 
 ## comtrade
-**2022.09-2022.10, KIET**
-- UN Comtrade API, 무역 마이크로 데이터 다운로드
+**2022.09-2022.10**
+- UN Comtrade API, Download Mirco Trade Data
 
 ## foiegras
-- HyperCLOVA X 활용, RAG 구현, ETF 추천시스템
+**2024.06-2024.07**
+- HyperCLOVA X, RAG, ETF Recommendation
