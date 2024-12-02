@@ -1,7 +1,7 @@
 # Dobby
 
 ## comtrade
-**2023.03**
+**2022.09-2022.10, KIET**
 - UN Comtrade API, 무역 마이크로 데이터 다운로드
 
 ## foiegras
