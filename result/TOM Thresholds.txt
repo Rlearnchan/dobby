@@ -1,3 +1,4 @@
+# 5%
 CH_0_group_0: 0 to 21 Days
 CH_0_group_1: 21 to 172 Days
 CH_0_group_2: 174 to 350 Days
@@ -18,7 +19,7 @@ LA_1_group_1: 4 to 150 Days
 LA_1_group_2: 153 to 353 Days
 
 
-
+# 10%
 CH_0_group_0: 0 to 28 Days
 CH_0_group_1: 29 to 129 Days
 CH_0_group_2: 129 to 350 Days
@@ -39,7 +40,7 @@ LA_1_group_1: 7 to 110 Days
 LA_1_group_2: 110 to 353 Days
 
 
-
+# 15%
 CH_0_group_0: 0 to 32 Days
 CH_0_group_1: 32 to 106 Days
 CH_0_group_2: 106 to 350 Days
@@ -60,7 +61,7 @@ LA_1_group_1: 10 to 92 Days
 LA_1_group_2: 92 to 353 Days
 
 
-
+# 20%
 CH_0_group_0: 0 to 35 Days
 CH_0_group_1: 35 to 89 Days
 CH_0_group_2: 89 to 350 Days
@@ -81,7 +82,7 @@ LA_1_group_1: 15 to 83 Days
 LA_1_group_2: 83 to 353 Days
 
 
-
+# 25%
 CH_0_group_0: 0 to 37 Days
 CH_0_group_1: 37 to 77 Days
 CH_0_group_2: 77 to 350 Days
@@ -102,7 +103,7 @@ LA_1_group_1: 20 to 74 Days
 LA_1_group_2: 75 to 353 Days
 
 
-
+# 30%
 CH_0_group_0: 0 to 40 Days
 CH_0_group_1: 40 to 69 Days
 CH_0_group_2: 69 to 350 Days

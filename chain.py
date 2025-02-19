@@ -73,12 +73,23 @@ def words_to_str(
 llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 
 
-class BinaryTOM(BaseModel):
-    """Estimated time-on-market(TOM) until the property is sold."""
+# class BinaryTOM(BaseModel):
+#     """Estimated time-on-market(TOM) until the property is sold."""
 
+#     TOM: Annotated[
+#         str,
+#         Field(description="Determine if the property was sold fast: 'yes' or 'no'."),
+#     ]
+#     REASON: Annotated[
+#         str, Field(description="Provide a brief reason for the decision.")
+#     ]
+
+class MultiTOM(BaseModel):
+    """Estimated time-on-market(TOM) until the property is sold."""
+    
     TOM: Annotated[
         str,
-        Field(description="Determine if the property was sold fast: 'yes' or 'no'."),
+        Field(description="Determine if the property was sold 'fast', 'moderate' or 'slow'."),
     ]
     REASON: Annotated[
         str, Field(description="Provide a brief reason for the decision.")
@@ -86,54 +97,63 @@ class BinaryTOM(BaseModel):
 
 
 # basic
-basic_system = f"""You are an expert realtor.
-The user will provide following information about properties that already have been sold on Zillow.
-1. Description (text written by the realtor)
-2. Attributes (basic information such as the number of rooms, size, etc.) 
-Your task is to determine whether the property was sold fast or not.
-The upper limit for "fast" selling is as follows:
-- For Chicago (IL), Single House: {sales_speed["CH"][0]} days
-- For Chicago (IL), Condo/Townhouse: {sales_speed["CH"][1]} days
-- For New York (NY), Single House: {sales_speed["NY"][0]} days
-- For New York (NY), Condo/Townhouse: {sales_speed["NY"][1]} days
-- For Los Angeles (CA), Single House: {sales_speed["LA"][0]} days
-- For Los Angeles (CA), Condo/Townhouse: {sales_speed["LA"][1]} days
-Respond with a binary score: 'yes' or 'no', and provide a brief reason (around 200 characters) for your decision.
-"""
 
-basic_template = ChatPromptTemplate.from_messages(
-    [
-        ("system", basic_system),
-        ("human", """[Description]\n{description}\n\n[Attributes]\n{attributes}\n\n"""),
-    ]
-)
+def build_basic_system(sales_speed: dict, th_idx: int, city: str, type: int):
+    
+    basic_system = f"""
+    You are an expert realtor.
+    The user will provide following information about properties that already have been sold on Zillow.
+    - Description: text written by the realtor
+    - Attributes: basic information such as the number of rooms, size, etc.
+    Your task is to determine whether the property was sold fast, moderate, or slow.
+    - fast-selling: 0 to {sales_speed[city][type]["fast"][th_idx]} days
+    - slow-selling: {sales_speed[city][type]["slow"][th_idx]} to 365 days
+    - moderate-selling: {sales_speed[city][type]["fast"][th_idx]} to {sales_speed[city][type]["slow"][th_idx]} days
+    Respond with a class name: 'fast', 'moderate', or 'slow', and provide a brief reason (around 200 characters) for your decision.
+    """
 
-basic_llm = llm.with_structured_output(BinaryTOM)
-basic_grader = basic_template | basic_llm
+    return basic_system
+
+
+def build_basic_template(basic_system: str):
+
+    basic_template = ChatPromptTemplate.from_messages(
+        [
+            ("system", basic_system),
+            ("human", """[Description]\n{description}\n\n[Attributes]\n{attributes}\n\n"""),
+        ]
+    )
+
+    return basic_template
+
+# basic_llm = llm.with_structured_output(BinaryTOM)
+basic_llm = llm.with_structured_output(MultiTOM)
+
 
 
 # with words
-words_system = f"""You are an expert realtor.
-The user will provide following information about properties that already have been sold on Zillow.
-1. Description (text written by the realtor)
-2. Attributes (basic information such as the number of rooms, size, etc.)
-3. Discriminative Words (words commonly used in homes that sell quickly or late) 
-Your task is to determine whether the property was sold fast or not.
-Your task is to determine whether the property was sold fast or not.
-The upper limit for "fast" selling is as follows:
-- For Chicago (IL), Single House: {sales_speed["CH"][0]} days
-- For Chicago (IL), Condo/Townhouse: {sales_speed["CH"][1]} days
-- For New York (NY), Single House: {sales_speed["NY"][0]} days
-- For New York (NY), Condo/Townhouse: {sales_speed["NY"][1]} days
-- For Los Angeles (CA), Single House: {sales_speed["LA"][0]} days
-- For Los Angeles (CA), Condo/Townhouse: {sales_speed["LA"][1]} days
-Respond with a binary score: 'yes' or 'no', and provide a brief reason (around 200 characters) for your decision.
-"""
+
+def build_words_system(sales_speed: dict, th_idx: int, city: str, type: int):
+    
+    words_system = f"""
+    You are an expert realtor.
+    The user will provide following information about properties that already have been sold on Zillow.
+    - Description: text written by the realtor
+    - Attributes: basic information such as the number of rooms, size, etc.
+    - Discriminative Words: words commonly used in homes that sell quickly or late
+    Your task is to determine whether the property was sold fast, moderate, or slow.
+    - fast-selling: 0 to {sales_speed[city][type]["fast"][th_idx]} days
+    - slow-selling: {sales_speed[city][type]["slow"][th_idx]} to 365 days
+    - moderate-selling: {sales_speed[city][type]["fast"][th_idx]} to {sales_speed[city][type]["slow"][th_idx]} days
+    Respond with a class name: 'fast', 'moderate', or 'slow', and provide a brief reason (around 200 characters) for your decision.
+    """
+
+    return words_system
 
 
-def build_words_template(city: str, single: int):
+def build_words_template(city: str, single: int, words_system: str, th_val: float):
 
-    discriminative_words = words_to_str(city, single)
+    discriminative_words = words_to_str(city=city, single=single, percentage=th_val)
     words_template = ChatPromptTemplate.from_messages(
         [
             ("system", words_system),
@@ -149,32 +169,34 @@ def build_words_template(city: str, single: int):
     return words_template
 
 
-words_llm = llm.with_structured_output(BinaryTOM)
+words_llm = llm.with_structured_output(MultiTOM)
 
 
 # with words & meanings
-full_system = f"""You are an expert realtor.
-The user will provide following information about properties that already have been sold on Zillow.
-1. Description (text written by the realtor)
-2. Attributes (basic information such as the number of rooms, size, etc.)
-3. Discriminative Words (words commonly used in homes that sell quickly or late)
-3-1. Meanings (implications of these words for potential buyers in the context of real estate transactions) 
-Your task is to determine whether the property was sold fast or not.
-The upper limit for "fast" selling is as follows:
-- For Chicago (IL), Single House: {sales_speed["CH"][0]} days
-- For Chicago (IL), Condo/Townhouse: {sales_speed["CH"][1]} days
-- For New York (NY), Single House: {sales_speed["NY"][0]} days
-- For New York (NY), Condo/Townhouse: {sales_speed["NY"][1]} days
-- For Los Angeles (CA), Single House: {sales_speed["LA"][0]} days
-- For Los Angeles (CA), Condo/Townhouse: {sales_speed["LA"][1]} days
-Respond with a binary score: 'yes' or 'no', and provide a brief reason (around 200 characters) for your decision.
-"""
+
+def build_full_system(sales_speed: dict, th_idx: int, city: str, type: int):
+    
+    words_system = f"""
+    You are an expert realtor.
+    The user will provide following information about properties that already have been sold on Zillow.
+    - Description: text written by the realtor
+    - Attributes: basic information such as the number of rooms, size, etc.
+    - Discriminative Words: words commonly used in homes that sell quickly or late
+    - Meanings: implications of these words for potential buyers in the context of real estate transactions
+    Your task is to determine whether the property was sold fast, moderate, or slow.
+    - fast-selling: 0 to {sales_speed[city][type]["fast"][th_idx]} days
+    - slow-selling: {sales_speed[city][type]["slow"][th_idx]} to 365 days
+    - moderate-selling: {sales_speed[city][type]["fast"][th_idx]} to {sales_speed[city][type]["slow"][th_idx]} days
+    Respond with a class name: 'fast', 'moderate', or 'slow', and provide a brief reason (around 200 characters) for your decision.
+    """
+
+    return words_system
 
 
-def build_full_template(city: str, single: int):
+def build_full_template(city: str, single: int, full_system: str, th_val: float, th_idx: int):
 
-    discriminative_words = words_to_str(city, single)
-    meanings = meanings_to_str(city, single)
+    discriminative_words = words_to_str(city=city, single=single, percentage=th_val)
+    meanings = meanings_to_str(city, single, th_idx)
 
     full_template = ChatPromptTemplate.from_messages(
         [
@@ -192,15 +214,28 @@ def build_full_template(city: str, single: int):
     return full_template
 
 
-full_llm = llm.with_structured_output(BinaryTOM)
+full_llm = llm.with_structured_output(MultiTOM)
 
 
 if __name__ == "__main__":
 
     zillow = pd.read_csv("dataset/2. zillow_cleaned.csv")
     sample = zillow.iloc[0]
-    print(f"\n{sample["zpid"]}: {sample["duration"]} Days")
+    th_idx = 4 # 0(5%) to 5(30%)
+    th_val = 0.25
+    gt_class = (
+        "fast"
+        if sample["duration"] <= sales_speed[sample["city"]][sample["single"]]["fast"][th_idx]
+        else "slow"
+        if sample["duration"] <= sales_speed[sample["city"]][sample["single"]]["slow"][th_idx]
+        else "moderate"
+    )
+        
+    print(f"\n{sample["zpid"]}: {sample["duration"]} Days ({gt_class} {int(th_val*100)}%)")
 
+    basic_system = build_basic_system(sales_speed, th_idx, sample["city"], sample["single"])
+    basic_template = build_basic_template(basic_system)
+    basic_grader = basic_template | basic_llm
     basic_result = basic_grader.invoke(
         input={
             "description": sample["description"],
@@ -209,18 +244,24 @@ if __name__ == "__main__":
     )
     print(f"Basic: {basic_result}")
 
-    # words_result = words_grader.invoke(
-    #     input={
-    #         "description": sample["description"],
-    #         "attributes": zillow_to_str(sample),
-    #     }
-    # )
-    # print(f"Words: {words_result}")
+    words_system = build_words_system(sales_speed, th_idx, sample["city"], sample["single"])
+    words_template = build_words_template(sample["city"], sample["single"], words_system, th_val)
+    words_grader = words_template | words_llm
+    words_result = words_grader.invoke(
+        input={
+            "description": sample["description"],
+            "attributes": zillow_to_str(sample),
+        }
+    )
+    print(f"Words: {words_result}")
 
-    # full_result = full_grader.invoke(
-    #     input={
-    #         "description": sample["description"],
-    #         "attributes": zillow_to_str(sample),
-    #     }
-    # )
-    # print(f"Full: {full_result}")
+    full_system = build_full_system(sales_speed, th_idx, sample["city"], sample["single"])
+    full_template = build_full_template(sample["city"], sample["single"], full_system, th_val, th_idx)
+    full_grader = full_template | full_llm
+    full_result = full_grader.invoke(
+        input={
+            "description": sample["description"],
+            "attributes": zillow_to_str(sample),
+        }
+    )
+    print(f"Full: {full_result}")

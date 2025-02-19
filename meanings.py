@@ -1,5 +1,7 @@
-# chicago, single house, fast-selling, 25% TOM threshold
-# /dataset/word_counts/0.25/CH_0_group_0_zscore.csv
+ch_sh_fast_5 = {}
+ch_sh_fast_10 = {}
+ch_sh_fast_15 = {}
+ch_sh_fast_20 = {}
 ch_sh_fast_25 = {
     "galewood": {
         "convenience": "Located near public transportation and essential amenities, making it easy for residents to commute and access services.",
@@ -62,8 +64,12 @@ ch_sh_fast_25 = {
     # "cta"
     # "youre"
 }
+ch_sh_fast_30 = {}
 
-
+ch_sh_slow_5 = {}
+ch_sh_slow_10 = {}
+ch_sh_slow_15 = {}
+ch_sh_slow_20 = {}
 ch_sh_slow_25 = {
     "rehabbed": {
         "convenience": "Indicates that the property has been renovated, making it more appealing and functional for potential buyers.",
@@ -126,8 +132,12 @@ ch_sh_slow_25 = {
     # "2022"
     # "cht"
 }
+ch_sh_slow_30 = {}
 
-
+ch_ct_fast_5 = {}
+ch_ct_fast_10 = {}
+ch_ct_fast_15 = {}
+ch_ct_fast_20 = {}
 ch_ct_fast_25 = {
     "hoas": {
         "convenience": "Homeowners Associations (HOAs) often provide maintenance and amenities, making living in a condo more convenient.",
@@ -190,8 +200,12 @@ ch_ct_fast_25 = {
     # "2021"
     # "clybourn"
 }
+ch_ct_fast_30 = {}
 
-
+ch_ct_slow_5 = {}
+ch_ct_slow_10 = {}
+ch_ct_slow_15 = {}
+ch_ct_slow_20 = {}
 ch_ct_slow_25 = {
     "doorperson": {
         "convenience": "A doorperson provides assistance to residents and guests, enhancing security and convenience.",
@@ -254,8 +268,12 @@ ch_ct_slow_25 = {
     # "tuckpointing"
     # "mudroom"
 }
+ch_ct_slow_30 = {}
 
-
+ny_sh_fast_5 = {}
+ny_sh_fast_10 = {}
+ny_sh_fast_15 = {}
+ny_sh_fast_20 = {}
 ny_sh_fast_25 = {
     "lirr": {
         "convenience": "The Long Island Rail Road (LIRR) provides easy access to New York City and surrounding areas, making commuting convenient for residents.",
@@ -318,8 +336,12 @@ ny_sh_fast_25 = {
     # "2021"
     # "2017"
 }
+ny_sh_fast_30 = {}
 
-
+ny_sh_slow_5 = {}
+ny_sh_slow_10 = {}
+ny_sh_slow_15 = {}
+ny_sh_slow_20 = {}
 ny_sh_slow_25 = {
     "bxm": {
         "convenience": "Refers to the Bronx Express Bus, providing convenient transportation options to Manhattan and other areas.",
@@ -382,8 +404,12 @@ ny_sh_slow_25 = {
     # "homebuyers"
     # "spacious"
 }
+ny_sh_slow_30 = {}
 
-
+ny_ct_fast_5 = {}
+ny_ct_fast_10 = {}
+ny_ct_fast_15 = {}
+ny_ct_fast_20 = {}
 ny_ct_fast_25 = {
     "chelseas": {
         "convenience": "Chelsea is a vibrant neighborhood known for its accessibility to public transport, shops, and restaurants.",
@@ -446,8 +472,12 @@ ny_ct_fast_25 = {
     # "woodside"
     # "douglaston"
 }
+ny_ct_fast_30 = {}
 
-
+ny_ct_slow_5 = {}
+ny_ct_slow_10 = {}
+ny_ct_slow_15 = {}
+ny_ct_slow_20 = {}
 ny_ct_slow_25 = {
     "waitlisted": {
         "convenience": "Refers to properties that are currently not available but may become available in the future, indicating demand.",
@@ -510,8 +540,12 @@ ny_ct_slow_25 = {
     # "kissena"
     # "hdfc"
 }
+ny_ct_slow_30 = {}
 
-
+la_sh_fast_5 = {}
+la_sh_fast_10 = {}
+la_sh_fast_15 = {}
+la_sh_fast_20 = {}
 la_sh_fast_25 = {
     "cariso": {
         "convenience": "Refers to a specific neighborhood or area known for its residential amenities and access to local services.",
@@ -574,8 +608,12 @@ la_sh_fast_25 = {
     # "10836"
     # "tujunga"
 }
+la_sh_fast_30 = {}
 
-
+la_sh_slow_5 = {}
+la_sh_slow_10 = {}
+la_sh_slow_15 = {}
+la_sh_slow_20 = {}
 la_sh_slow_25 = {
     "thermador": {
         "convenience": "Refers to high-end kitchen appliances that offer superior performance and efficiency.",
@@ -638,8 +676,12 @@ la_sh_slow_25 = {
     # "westdale"
     # "kentwood"
 }
+la_sh_slow_30 = {}
 
-
+la_ct_fast_5 = {}
+la_ct_fast_10 = {}
+la_ct_fast_15 = {}
+la_ct_fast_20 = {}
 la_ct_fast_25 = {
     "townhome": {
         "convenience": "Townhomes often provide a low-maintenance lifestyle with shared amenities, making them convenient for busy residents.",
@@ -702,8 +744,12 @@ la_ct_fast_25 = {
     # "12039"
     # "spacious"
 }
+la_ct_fast_30 = {}
 
-
+la_ct_slow_5 = {}
+la_ct_slow_10 = {}
+la_ct_slow_15 = {}
+la_ct_slow_20 = {}
 la_ct_slow_25 = {
     "centerpointe": {
         "convenience": "Centerpointe is a neighborhood known for its residential amenities and access to local services.",
@@ -766,28 +812,72 @@ la_ct_slow_25 = {
     # "triplex"
     # "beachport"
 }
+la_ct_slow_30 = {}
 
+# def meanings_to_str(city: str, type: int) -> str:
+#     meanings_dict = {
+#         "CH": {
+#             0: ch_sh_fast_25,
+#             1: ch_ct_fast_25,
+#         },
+#         "NY": {
+#             0: ny_sh_fast_25,
+#             1: ny_ct_fast_25,
+#         },
+#         "LA": {
+#             0: la_sh_fast_25,
+#             1: la_ct_fast_25,
+#         },
+#     }
 
-def meanings_to_str(city: str, type: int) -> str:
+#     if city in meanings_dict and type in meanings_dict[city]:
+#         selected_meanings = meanings_dict[city][type]
+#         return "\n".join(
+#             [f"{key}: {value}" for key, value in selected_meanings.items()]
+#         )
+#     else:
+#         return "No meanings found for the specified city and type."
+
+def meanings_to_str(city: str, type: int, th_idx: int) -> str:
     meanings_dict = {
         "CH": {
-            0: ch_sh_fast_25,
-            1: ch_ct_fast_25,
+            0: {
+                "fast": [ch_sh_fast_5, ch_sh_fast_10, ch_sh_fast_15, ch_sh_fast_20, ch_sh_fast_25, ch_sh_fast_30],
+                "slow": [ch_sh_slow_5, ch_sh_slow_10, ch_sh_slow_15, ch_sh_slow_20, ch_sh_slow_25, ch_sh_slow_30]
+            },
+            1: {
+                "fast": [ch_ct_fast_5, ch_ct_fast_10, ch_ct_fast_15, ch_ct_fast_20, ch_ct_fast_25, ch_ct_fast_30],
+                "slow": [ch_ct_slow_5, ch_ct_slow_10, ch_ct_slow_15, ch_ct_slow_20, ch_ct_slow_25, ch_ct_slow_30]
+            }
         },
         "NY": {
-            0: ny_sh_fast_25,
-            1: ny_ct_fast_25,
+            0: {
+                "fast": [ny_sh_fast_5, ny_sh_fast_10, ny_sh_fast_15, ny_sh_fast_20, ny_sh_fast_25, ny_sh_fast_30],
+                "slow": [ny_sh_slow_5, ny_sh_slow_10, ny_sh_slow_15, ny_sh_slow_20, ny_sh_slow_25, ny_sh_slow_30]
+            },
+            1: {
+                "fast": [ny_ct_fast_5, ny_ct_fast_10, ny_ct_fast_15, ny_ct_fast_20, ny_ct_fast_25, ny_ct_fast_30],
+                "slow": [ny_ct_slow_5, ny_ct_slow_10, ny_ct_slow_15, ny_ct_slow_20, ny_ct_slow_25, ny_ct_slow_30]
+            }
         },
         "LA": {
-            0: la_sh_fast_25,
-            1: la_ct_fast_25,
+            0: {
+                "fast": [la_sh_fast_5, la_sh_fast_10, la_sh_fast_15, la_sh_fast_20, la_sh_fast_25, la_sh_fast_30],
+                "slow": [la_sh_slow_5, la_sh_slow_10, la_sh_slow_15, la_sh_slow_20, la_sh_slow_25, la_sh_slow_30]
+            },
+            1: {
+                "fast": [la_ct_fast_5, la_ct_fast_10, la_ct_fast_15, la_ct_fast_20, la_ct_fast_25, la_ct_fast_30],
+                "slow": [la_ct_slow_5, la_ct_slow_10, la_ct_slow_15, la_ct_slow_20, la_ct_slow_25, la_ct_slow_30]
+            }
         },
     }
 
     if city in meanings_dict and type in meanings_dict[city]:
-        selected_meanings = meanings_dict[city][type]
+        fast_meanings = meanings_dict[city][type]["fast"][th_idx]
+        slow_meanings = meanings_dict[city][type]["slow"][th_idx]
         return "\n".join(
-            [f"{key}: {value}" for key, value in selected_meanings.items()]
+            [f"{key}: {value}" for key, value in fast_meanings.items()] +
+            [f"{key}: {value}" for key, value in slow_meanings.items()]
         )
     else:
         return "No meanings found for the specified city and type."
