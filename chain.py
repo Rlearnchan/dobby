@@ -84,12 +84,15 @@ llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 #         str, Field(description="Provide a brief reason for the decision.")
 #     ]
 
+
 class MultiTOM(BaseModel):
     """Estimated time-on-market(TOM) until the property is sold."""
-    
+
     TOM: Annotated[
         str,
-        Field(description="Determine if the property was sold 'fast', 'moderate' or 'slow'."),
+        Field(
+            description="Determine if the property was sold 'fast', 'moderate' or 'slow'."
+        ),
     ]
     REASON: Annotated[
         str, Field(description="Provide a brief reason for the decision.")
@@ -98,8 +101,9 @@ class MultiTOM(BaseModel):
 
 # basic
 
+
 def build_basic_system(sales_speed: dict, th_idx: int, city: str, type: int):
-    
+
     basic_system = f"""
     You are an expert realtor.
     The user will provide following information about properties that already have been sold on Zillow.
@@ -120,21 +124,25 @@ def build_basic_template(basic_system: str):
     basic_template = ChatPromptTemplate.from_messages(
         [
             ("system", basic_system),
-            ("human", """[Description]\n{description}\n\n[Attributes]\n{attributes}\n\n"""),
+            (
+                "human",
+                """[Description]\n{description}\n\n[Attributes]\n{attributes}\n\n""",
+            ),
         ]
     )
 
     return basic_template
 
+
 # basic_llm = llm.with_structured_output(BinaryTOM)
 basic_llm = llm.with_structured_output(MultiTOM)
 
 
-
 # with words
 
+
 def build_words_system(sales_speed: dict, th_idx: int, city: str, type: int):
-    
+
     words_system = f"""
     You are an expert realtor.
     The user will provide following information about properties that already have been sold on Zillow.
@@ -174,8 +182,9 @@ words_llm = llm.with_structured_output(MultiTOM)
 
 # with words & meanings
 
+
 def build_full_system(sales_speed: dict, th_idx: int, city: str, type: int):
-    
+
     words_system = f"""
     You are an expert realtor.
     The user will provide following information about properties that already have been sold on Zillow.
@@ -193,7 +202,9 @@ def build_full_system(sales_speed: dict, th_idx: int, city: str, type: int):
     return words_system
 
 
-def build_full_template(city: str, single: int, full_system: str, th_val: float, th_idx: int):
+def build_full_template(
+    city: str, single: int, full_system: str, th_val: float, th_idx: int
+):
 
     discriminative_words = words_to_str(city=city, single=single, percentage=th_val)
     meanings = meanings_to_str(city, single, th_idx)
@@ -221,19 +232,27 @@ if __name__ == "__main__":
 
     zillow = pd.read_csv("dataset/2. zillow_cleaned.csv")
     sample = zillow.iloc[0]
-    th_idx = 4 # 0(5%) to 5(30%)
-    th_val = 0.25
+    th_idx = 4  # 0(5%) to 5(30%)
+    th_val = 0.25  # [0.05, 0.1, 0.15, 0.2, 0.25, 0.3]
     gt_class = (
         "fast"
-        if sample["duration"] <= sales_speed[sample["city"]][sample["single"]]["fast"][th_idx]
-        else "slow"
-        if sample["duration"] <= sales_speed[sample["city"]][sample["single"]]["slow"][th_idx]
-        else "moderate"
+        if sample["duration"]
+        <= sales_speed[sample["city"]][sample["single"]]["fast"][th_idx]
+        else (
+            "slow"
+            if sample["duration"]
+            <= sales_speed[sample["city"]][sample["single"]]["slow"][th_idx]
+            else "moderate"
+        )
     )
-        
-    print(f"\n{sample["zpid"]}: {sample["duration"]} Days ({gt_class} {int(th_val*100)}%)")
 
-    basic_system = build_basic_system(sales_speed, th_idx, sample["city"], sample["single"])
+    print(
+        f"\n{sample["zpid"]}: {sample["duration"]} Days ({gt_class} {int(th_val*100)}%)"
+    )
+
+    basic_system = build_basic_system(
+        sales_speed, th_idx, sample["city"], sample["single"]
+    )
     basic_template = build_basic_template(basic_system)
     basic_grader = basic_template | basic_llm
     basic_result = basic_grader.invoke(
@@ -244,8 +263,12 @@ if __name__ == "__main__":
     )
     print(f"Basic: {basic_result}")
 
-    words_system = build_words_system(sales_speed, th_idx, sample["city"], sample["single"])
-    words_template = build_words_template(sample["city"], sample["single"], words_system, th_val)
+    words_system = build_words_system(
+        sales_speed, th_idx, sample["city"], sample["single"]
+    )
+    words_template = build_words_template(
+        sample["city"], sample["single"], words_system, th_val
+    )
     words_grader = words_template | words_llm
     words_result = words_grader.invoke(
         input={
@@ -255,8 +278,12 @@ if __name__ == "__main__":
     )
     print(f"Words: {words_result}")
 
-    full_system = build_full_system(sales_speed, th_idx, sample["city"], sample["single"])
-    full_template = build_full_template(sample["city"], sample["single"], full_system, th_val, th_idx)
+    full_system = build_full_system(
+        sales_speed, th_idx, sample["city"], sample["single"]
+    )
+    full_template = build_full_template(
+        sample["city"], sample["single"], full_system, th_val, th_idx
+    )
     full_grader = full_template | full_llm
     full_result = full_grader.invoke(
         input={

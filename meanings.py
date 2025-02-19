@@ -1,4 +1,25 @@
-ch_sh_fast_5 = {}
+ch_sh_fast_5 = {
+    "rehabbers",
+    "tuckpointing",
+    "metra",
+    "greenview",
+    "countertop",
+    "2018",
+    "2023",
+    "walkable",
+    "rehabbed",
+    "4226",
+    # "cabinetry",
+    # "millwork",
+    # "miele",
+    # "youre",
+    # "subzero",
+    # "graceland",
+    # "barbeque",
+    # "fridge",
+    # "backsplash",
+    # "pantry",
+}
 ch_sh_fast_10 = {}
 ch_sh_fast_15 = {}
 ch_sh_fast_20 = {}
@@ -66,7 +87,28 @@ ch_sh_fast_25 = {
 }
 ch_sh_fast_30 = {}
 
-ch_sh_slow_5 = {}
+ch_sh_slow_5 = {
+    "mudroom",
+    "cookout",
+    "fenced",
+    "renovated",
+    "bedroom",
+    "hermosa",
+    "pella",
+    "wow",
+    "commuter",
+    "ranch",
+    # "homeowner",
+    # "auction",
+    # "hookup",
+    # "pill",
+    # "finished",
+    # "basement",
+    # "spacious",
+    # "customization",
+    # "thats",
+    # "relaxing",
+}
 ch_sh_slow_10 = {}
 ch_sh_slow_15 = {}
 ch_sh_slow_20 = {}
@@ -134,7 +176,28 @@ ch_sh_slow_25 = {
 }
 ch_sh_slow_30 = {}
 
-ch_ct_fast_5 = {}
+ch_ct_fast_5 = {
+    "dornbracht",
+    "townhome",
+    "backsplash",
+    "hoas",
+    "freides",
+    "marianos",
+    "trex",
+    "countertop",
+    "bucktown",
+    "showcasing",
+    # "dusable",
+    # "grohe",
+    # "diversey",
+    # "cabinetry",
+    # "walkable",
+    # "2022",
+    # "jacuzzi",
+    # "rehabbed",
+    # "5757",
+    # "soaker",
+}
 ch_ct_fast_10 = {}
 ch_ct_fast_15 = {}
 ch_ct_fast_20 = {}
@@ -202,7 +265,28 @@ ch_ct_fast_25 = {
 }
 ch_ct_fast_30 = {}
 
-ch_ct_slow_5 = {}
+ch_ct_slow_5 = {
+    "streeterville",
+    "walgreens",
+    "lakefront",
+    "eastside",
+    "childrens",
+    "lakeshore",
+    "amenity",
+    "assumable",
+    "1000000",
+    "tivo",
+    # "subzero",
+    # "joes",
+    # "kenwood",
+    # "foyer",
+    # "kinzie",
+    # "riverwalk",
+    # "35000",
+    # "doorman",
+    # "drywall",
+    # "onsite",
+}
 ch_ct_slow_10 = {}
 ch_ct_slow_15 = {}
 ch_ct_slow_20 = {}
@@ -270,7 +354,28 @@ ch_ct_slow_25 = {
 }
 ch_ct_slow_30 = {}
 
-ny_sh_fast_5 = {}
+ny_sh_fast_5 = {
+    "backsplash",
+    "eik",
+    "foyer",
+    "rehab",
+    "ambiance",
+    "cozy",
+    "http",
+    "garage",
+    "flooring",
+    "wakefield",
+    # "2024",
+    # "starter",
+    # "www",
+    # "tiled",
+    # "gleaming",
+    # "fenced",
+    # "boasting",
+    # "upgrade",
+    # "boast",
+    # "purchaser",
+}
 ny_sh_fast_10 = {}
 ny_sh_fast_15 = {}
 ny_sh_fast_20 = {}
@@ -338,7 +443,28 @@ ny_sh_fast_25 = {
 }
 ny_sh_fast_30 = {}
 
-ny_sh_slow_5 = {}
+ny_sh_slow_5 = {
+    "townhome",
+    "annadale",
+    "trex",
+    "buildable",
+    "driveway",
+    "barbeque",
+    "whitestone",
+    "countertop",
+    "gerritsen",
+    "ensuite",
+    # "duplex",
+    # "bathroom",
+    # "privet",
+    # "townhouse",
+    # "bedroom",
+    # "thats",
+    # "2019",
+    # "basement",
+    # "sim",
+    # "triplex",
+}
 ny_sh_slow_10 = {}
 ny_sh_slow_15 = {}
 ny_sh_slow_20 = {}
@@ -406,7 +532,28 @@ ny_sh_slow_25 = {
 }
 ny_sh_slow_30 = {}
 
-ny_ct_fast_5 = {}
+ny_ct_fast_5 = {
+    "dornbracht",
+    "scavolini",
+    "countertop",
+    "miele",
+    "backsplash",
+    "gaggenau",
+    "bbqs",
+    "peloton",
+    "wifi",
+    "bertazzoni",
+    # "thermador",
+    # "liebherr",
+    # "sonos",
+    # "cabinetry",
+    # "cooktop",
+    # "amenity",
+    # "condominium",
+    # "oversized",
+    # "rooftop",
+    # "trendiest",
+}
 ny_ct_fast_10 = {}
 ny_ct_fast_15 = {}
 ny_ct_fast_20 = {}
@@ -474,7 +621,28 @@ ny_ct_fast_25 = {
 }
 ny_ct_fast_30 = {}
 
-ny_ct_slow_5 = {}
+ny_ct_slow_5 = {
+    "pistilli",
+    "shorehaven",
+    "annadale",
+    "riverdale",
+    "parkchester",
+    "crotona",
+    "ditmars",
+    "keyless",
+    "gowanus",
+    "dinette",
+    #     "soundview",
+    #     "buildable",
+    #     "coop",
+    #     "bronx",
+    #     "yorkville",
+    #     "hardwood",
+    #     "parquet",
+    #     "renovated",
+    #     "youll",
+    #     "conditioner",
+}
 ny_ct_slow_10 = {}
 ny_ct_slow_15 = {}
 ny_ct_slow_20 = {}
@@ -542,7 +710,28 @@ ny_ct_slow_25 = {
 }
 ny_ct_slow_30 = {}
 
-la_sh_fast_5 = {}
+la_sh_fast_5 = {
+    "gladbeck",
+    "backsplash",
+    "11070",
+    "arleta",
+    "trex",
+    "upgraded",
+    "northridge",
+    "holmby",
+    "4912",
+    "bluetooth",
+    # "cooktop",
+    # "recessed",
+    # "tarzana",
+    # "calabasas",
+    # "youre",
+    # "neutra",
+    # "flooring",
+    # "paver",
+    # "hosting",
+    # "topanga",
+}
 la_sh_fast_10 = {}
 la_sh_fast_15 = {}
 la_sh_fast_20 = {}
@@ -610,7 +799,28 @@ la_sh_fast_25 = {
 }
 la_sh_fast_30 = {}
 
-la_sh_slow_5 = {}
+la_sh_slow_5 = {
+    "thinq",
+    "milgard",
+    "bertazzoni",
+    "westcliffe",
+    "overbid",
+    "sunpower",
+    "sofi",
+    "carthay",
+    "ensuite",
+    "dtla",
+    # "midvale",
+    # "seamlessly",
+    # "stackable",
+    # "jordens",
+    # "thermador",
+    # "sonos",
+    # "tankless",
+    # "rooftop",
+    # "closet",
+    # "gated",
+}
 la_sh_slow_10 = {}
 la_sh_slow_15 = {}
 la_sh_slow_20 = {}
@@ -678,7 +888,28 @@ la_sh_slow_25 = {
 }
 la_sh_slow_30 = {}
 
-la_ct_fast_5 = {}
+la_ct_fast_5 = {
+    "townhome",
+    "thinq",
+    "wifi",
+    "briarcrest",
+    "encino",
+    "wyngate",
+    "8309",
+    "countertop",
+    "backsplash",
+    "townhomes",
+    #     "8748",
+    #     "topanga",
+    #     "townhouse",
+    #     "ensuite",
+    #     "condo",
+    #     "sylmar",
+    #     "patio",
+    #     "gated",
+    #     "recessed",
+    #     "barbeque",
+}
 la_ct_fast_10 = {}
 la_ct_fast_15 = {}
 la_ct_fast_20 = {}
@@ -746,7 +977,28 @@ la_ct_fast_25 = {
 }
 la_ct_fast_30 = {}
 
-la_ct_slow_5 = {}
+la_ct_slow_5 = {
+    "dtla",
+    "gaggenau",
+    "teramachi",
+    "triplex",
+    "8535",
+    "contigency",
+    "fwy",
+    "adu",
+    "mirabella",
+    "ralphs",
+    # "overbid",
+    # "subzero",
+    # "cooktop",
+    # "concierge",
+    # "rooftop",
+    # "onsite",
+    # "2021",
+    # "3018",
+    # "bottega",
+    # "retrofit",
+}
 la_ct_slow_10 = {}
 la_ct_slow_15 = {}
 la_ct_slow_20 = {}
@@ -838,37 +1090,122 @@ la_ct_slow_30 = {}
 #     else:
 #         return "No meanings found for the specified city and type."
 
+
 def meanings_to_str(city: str, type: int, th_idx: int) -> str:
     meanings_dict = {
         "CH": {
             0: {
-                "fast": [ch_sh_fast_5, ch_sh_fast_10, ch_sh_fast_15, ch_sh_fast_20, ch_sh_fast_25, ch_sh_fast_30],
-                "slow": [ch_sh_slow_5, ch_sh_slow_10, ch_sh_slow_15, ch_sh_slow_20, ch_sh_slow_25, ch_sh_slow_30]
+                "fast": [
+                    ch_sh_fast_5,
+                    ch_sh_fast_10,
+                    ch_sh_fast_15,
+                    ch_sh_fast_20,
+                    ch_sh_fast_25,
+                    ch_sh_fast_30,
+                ],
+                "slow": [
+                    ch_sh_slow_5,
+                    ch_sh_slow_10,
+                    ch_sh_slow_15,
+                    ch_sh_slow_20,
+                    ch_sh_slow_25,
+                    ch_sh_slow_30,
+                ],
             },
             1: {
-                "fast": [ch_ct_fast_5, ch_ct_fast_10, ch_ct_fast_15, ch_ct_fast_20, ch_ct_fast_25, ch_ct_fast_30],
-                "slow": [ch_ct_slow_5, ch_ct_slow_10, ch_ct_slow_15, ch_ct_slow_20, ch_ct_slow_25, ch_ct_slow_30]
-            }
+                "fast": [
+                    ch_ct_fast_5,
+                    ch_ct_fast_10,
+                    ch_ct_fast_15,
+                    ch_ct_fast_20,
+                    ch_ct_fast_25,
+                    ch_ct_fast_30,
+                ],
+                "slow": [
+                    ch_ct_slow_5,
+                    ch_ct_slow_10,
+                    ch_ct_slow_15,
+                    ch_ct_slow_20,
+                    ch_ct_slow_25,
+                    ch_ct_slow_30,
+                ],
+            },
         },
         "NY": {
             0: {
-                "fast": [ny_sh_fast_5, ny_sh_fast_10, ny_sh_fast_15, ny_sh_fast_20, ny_sh_fast_25, ny_sh_fast_30],
-                "slow": [ny_sh_slow_5, ny_sh_slow_10, ny_sh_slow_15, ny_sh_slow_20, ny_sh_slow_25, ny_sh_slow_30]
+                "fast": [
+                    ny_sh_fast_5,
+                    ny_sh_fast_10,
+                    ny_sh_fast_15,
+                    ny_sh_fast_20,
+                    ny_sh_fast_25,
+                    ny_sh_fast_30,
+                ],
+                "slow": [
+                    ny_sh_slow_5,
+                    ny_sh_slow_10,
+                    ny_sh_slow_15,
+                    ny_sh_slow_20,
+                    ny_sh_slow_25,
+                    ny_sh_slow_30,
+                ],
             },
             1: {
-                "fast": [ny_ct_fast_5, ny_ct_fast_10, ny_ct_fast_15, ny_ct_fast_20, ny_ct_fast_25, ny_ct_fast_30],
-                "slow": [ny_ct_slow_5, ny_ct_slow_10, ny_ct_slow_15, ny_ct_slow_20, ny_ct_slow_25, ny_ct_slow_30]
-            }
+                "fast": [
+                    ny_ct_fast_5,
+                    ny_ct_fast_10,
+                    ny_ct_fast_15,
+                    ny_ct_fast_20,
+                    ny_ct_fast_25,
+                    ny_ct_fast_30,
+                ],
+                "slow": [
+                    ny_ct_slow_5,
+                    ny_ct_slow_10,
+                    ny_ct_slow_15,
+                    ny_ct_slow_20,
+                    ny_ct_slow_25,
+                    ny_ct_slow_30,
+                ],
+            },
         },
         "LA": {
             0: {
-                "fast": [la_sh_fast_5, la_sh_fast_10, la_sh_fast_15, la_sh_fast_20, la_sh_fast_25, la_sh_fast_30],
-                "slow": [la_sh_slow_5, la_sh_slow_10, la_sh_slow_15, la_sh_slow_20, la_sh_slow_25, la_sh_slow_30]
+                "fast": [
+                    la_sh_fast_5,
+                    la_sh_fast_10,
+                    la_sh_fast_15,
+                    la_sh_fast_20,
+                    la_sh_fast_25,
+                    la_sh_fast_30,
+                ],
+                "slow": [
+                    la_sh_slow_5,
+                    la_sh_slow_10,
+                    la_sh_slow_15,
+                    la_sh_slow_20,
+                    la_sh_slow_25,
+                    la_sh_slow_30,
+                ],
             },
             1: {
-                "fast": [la_ct_fast_5, la_ct_fast_10, la_ct_fast_15, la_ct_fast_20, la_ct_fast_25, la_ct_fast_30],
-                "slow": [la_ct_slow_5, la_ct_slow_10, la_ct_slow_15, la_ct_slow_20, la_ct_slow_25, la_ct_slow_30]
-            }
+                "fast": [
+                    la_ct_fast_5,
+                    la_ct_fast_10,
+                    la_ct_fast_15,
+                    la_ct_fast_20,
+                    la_ct_fast_25,
+                    la_ct_fast_30,
+                ],
+                "slow": [
+                    la_ct_slow_5,
+                    la_ct_slow_10,
+                    la_ct_slow_15,
+                    la_ct_slow_20,
+                    la_ct_slow_25,
+                    la_ct_slow_30,
+                ],
+            },
         },
     }
 
@@ -876,8 +1213,8 @@ def meanings_to_str(city: str, type: int, th_idx: int) -> str:
         fast_meanings = meanings_dict[city][type]["fast"][th_idx]
         slow_meanings = meanings_dict[city][type]["slow"][th_idx]
         return "\n".join(
-            [f"{key}: {value}" for key, value in fast_meanings.items()] +
-            [f"{key}: {value}" for key, value in slow_meanings.items()]
+            [f"{key}: {value}" for key, value in fast_meanings.items()]
+            + [f"{key}: {value}" for key, value in slow_meanings.items()]
         )
     else:
         return "No meanings found for the specified city and type."
