@@ -20,9 +20,72 @@ ch_sh_fast_5 = {
     # "backsplash",
     # "pantry",
 }
-ch_sh_fast_10 = {}
-ch_sh_fast_15 = {}
-ch_sh_fast_20 = {}
+ch_sh_fast_10 = {
+    "rehabbers",
+    "galewood",
+    "tuckpointing",
+    "metra",
+    "2024",
+    "countertop",
+    "greenview",
+    "youll",
+    "2018",
+    "walkable",
+    # "2023",
+    # "dormered",
+    # "bucktown",
+    # "culdesac",
+    # "backsplash",
+    # "2021",
+    # "rehab",
+    # "cta",
+    # "fridge",
+    # "4226",
+}
+ch_sh_fast_15 = {
+    "galewood",
+    "rehabbers",
+    "tuckpointing",
+    "metra",
+    "2024",
+    "youll",
+    "greenview",
+    "dormered",
+    "bucktown",
+    "2018",
+    # "ohare",
+    # "backsplash",
+    # "walkable",
+    # "sunroom",
+    # "cabinetry",
+    # "cta",
+    # "2021",
+    # "barbeque",
+    # "miele",
+    # "rowhouse",
+}
+ch_sh_fast_20 = {
+    "rehabbers",
+    "galewood",
+    "tuckpointing",
+    "ohare",
+    "2024",
+    "gaulter",
+    "metra",
+    "youll",
+    "sauganash",
+    "greenview",
+    # "dormered",
+    # "walkable",
+    # "bucktown",
+    # "cabinetry",
+    # "paver",
+    # "trex",
+    # "2018",
+    # "cta",
+    # "sunroom",
+    # "oversized",
+}
 ch_sh_fast_25 = {
     "galewood": {
         "convenience": "Located near public transportation and essential amenities, making it easy for residents to commute and access services.",
@@ -85,7 +148,28 @@ ch_sh_fast_25 = {
     # "cta"
     # "youre"
 }
-ch_sh_fast_30 = {}
+ch_sh_fast_30 = {
+    "galewood",
+    "rehabbers",
+    "ohare",
+    "tuckpointing",
+    "metra",
+    "trex",
+    "pergo",
+    "rosemoor",
+    "sunroom",
+    "2024",
+    # "gaulter",
+    # "homepath",
+    # "dormered",
+    # "youll",
+    # "sauganash",
+    # "wifi",
+    # "greenview",
+    # "walkable",
+    # "oversized",
+    # "additional",
+}
 
 ch_sh_slow_5 = {
     "mudroom",
@@ -109,9 +193,72 @@ ch_sh_slow_5 = {
     # "thats",
     # "relaxing",
 }
-ch_sh_slow_10 = {}
-ch_sh_slow_15 = {}
-ch_sh_slow_20 = {}
+ch_sh_slow_10 = {
+    "rehabbed",
+    "dimmable",
+    "225000",
+    "mudroom",
+    "jetted",
+    "tankless",
+    "gfa",
+    "cookout",
+    "flooring",
+    "seamlessly",
+    # "emd",
+    # "renovated",
+    # "riverfront",
+    # "hookup",
+    # "ashburn",
+    # "seperate",
+    # "frameless",
+    # "redone",
+    # "stainless",
+    # "pvt",
+}
+ch_sh_slow_15 = {
+    "rehabbed",
+    "thermador",
+    "mudroom",
+    "dimmable",
+    "tankless",
+    "225000",
+    "obama",
+    "coolney",
+    "jetted",
+    "renovated",
+    # "hookup",
+    # "walgreens",
+    # "redone",
+    # "cht",
+    # "gfa",
+    # "skyway",
+    # "emd",
+    # "riverfront",
+    # "tile",
+    # "homeowner",
+}
+ch_sh_slow_20 = {
+    "rehabbed",
+    "thermador",
+    "dimmable",
+    "obama",
+    "tankless",
+    "townhome",
+    "225000",
+    "hookup",
+    "jetted",
+    "frameless",
+    # "renovated",
+    # "redone",
+    # "marianos",
+    # "skyway",
+    # "rooftop",
+    # "mudroom",
+    # "hwh",
+    # "walgreens",
+    # "cht",
+    # "gfa",
+}
 ch_sh_slow_25 = {
     "rehabbed": {
         "convenience": "Indicates that the property has been renovated, making it more appealing and functional for potential buyers.",
@@ -174,7 +321,28 @@ ch_sh_slow_25 = {
     # "2022"
     # "cht"
 }
-ch_sh_slow_30 = {}
+ch_sh_slow_30 = {
+    "thermador",
+    "countertop",
+    "obama",
+    "dimmable",
+    "townhome",
+    "225000",
+    "rehabbed",
+    "hookup",
+    "mudroom",
+    "skyway",
+    # "renovated",
+    # "jetted",
+    # "frameless",
+    # "redone",
+    # "gfa",
+    # "sfh",
+    # "crains",
+    # "bth",
+    # "cht",
+    # "rooftop",
+}
 
 ch_ct_fast_5 = {
     "dornbracht",
@@ -198,9 +366,72 @@ ch_ct_fast_5 = {
     # "5757",
     # "soaker",
 }
-ch_ct_fast_10 = {}
-ch_ct_fast_15 = {}
-ch_ct_fast_20 = {}
+ch_ct_fast_10 = {
+    "tottos",
+    "dornbracht",
+    "hoas",
+    "countertop",
+    "backsplash",
+    "rehabbed",
+    "skydeck",
+    "marianos",
+    "bucktown",
+    "trex",
+    # "walkable",
+    # "walkability",
+    # "freides",
+    # "grohe",
+    # "2022",
+    # "osco",
+    # "cta",
+    # "2021",
+    # "cabinetry",
+    # "appliance",
+}
+ch_ct_fast_15 = {
+    "tottos",
+    "backsplash",
+    "townhome",
+    "duravit",
+    "dornbracht",
+    "countertop",
+    "hoas",
+    "marianos",
+    "bucktown",
+    "skydeck",
+    # "rehabbed",
+    # "cabinetry",
+    # "trex",
+    # "refinished",
+    # "2021",
+    # "2022",
+    # "walkability",
+    # "condo",
+    # "osco",
+    # "freides",
+}
+ch_ct_fast_20 = {
+    "galewood",
+    "tottos",
+    "backsplash",
+    "openhouse",
+    "marianos",
+    "rehabbed",
+    "duravit",
+    "dornbracht",
+    "countertop",
+    "hoas",
+    # "walkability",
+    # "bucktown",
+    # "skydeck",
+    # "refinished",
+    # "2021",
+    # "osco",
+    # "condo",
+    # "sunroom",
+    # "freides",
+    # "diversey",
+}
 ch_ct_fast_25 = {
     "hoas": {
         "convenience": "Homeowners Associations (HOAs) often provide maintenance and amenities, making living in a condo more convenient.",
@@ -263,7 +494,28 @@ ch_ct_fast_25 = {
     # "2021"
     # "clybourn"
 }
-ch_ct_fast_30 = {}
+ch_ct_fast_30 = {
+    "marianos",
+    "hoas",
+    "backsplash",
+    "countertop",
+    "tottos",
+    "rehabbed",
+    "galewood",
+    "bucktown",
+    "openhouse",
+    "townhome",
+    # "wrigleyville",
+    # "cabinetry",
+    # "dornbracht",
+    # "condo",
+    # "glenlake",
+    # "walkability",
+    # "refinished",
+    # "clybourn",
+    # "skydeck",
+    # "2021",
+}
 
 ch_ct_slow_5 = {
     "streeterville",
@@ -287,9 +539,72 @@ ch_ct_slow_5 = {
     # "drywall",
     # "onsite",
 }
-ch_ct_slow_10 = {}
-ch_ct_slow_15 = {}
-ch_ct_slow_20 = {}
+ch_ct_slow_10 = {
+    "streeterville",
+    "thermador",
+    "ohare",
+    "kallista",
+    "lakefront",
+    "sundeck",
+    "amenity",
+    "lakeshore",
+    "eastside",
+    "bartelme",
+    # "gaggenau",
+    # "walgreens",
+    # "onsite",
+    # "firework",
+    # "elfa",
+    # "kinzie",
+    # "subzero",
+    # "4537",
+    # "fridge",
+    # "arthington",
+}
+ch_ct_slow_15 = {
+    "streeterville",
+    "doorperson",
+    "bartelme",
+    "rohes",
+    "playlot",
+    "walgreens",
+    "kallista",
+    "eastside",
+    "waitlist",
+    "amenity",
+    # "onsite",
+    # "lakeshore",
+    # "sundeck",
+    # "subzero",
+    # "lakefront",
+    # "thermador",
+    # "ohare",
+    # "mudroom",
+    # "gaggenau",
+    # "childrens", 
+}
+ch_ct_slow_20 = {
+    "streeterville",
+    "doorperson",
+    "kallista",
+    "ohare",
+    "rohes",
+    "playlot",
+    "undercabinet",
+    "bartelme",
+    "walgreens",
+    "onsite",
+    # "sundeck",
+    # "subzero",
+    # "eastside",
+    # "amenity",
+    # "lakeshore",
+    # "childrens",
+    # "tuckpointing",
+    # "mudroom",
+    # "townhomes",
+    # "gaggenau",
+}
 ch_ct_slow_25 = {
     "doorperson": {
         "convenience": "A doorperson provides assistance to residents and guests, enhancing security and convenience.",
@@ -352,7 +667,28 @@ ch_ct_slow_25 = {
     # "tuckpointing"
     # "mudroom"
 }
-ch_ct_slow_30 = {}
+ch_ct_slow_30 = {
+    "streeterville",
+    "doorperson",
+    "scavolini",
+    "sundeck",
+    "rohes",
+    "tuckpointing",
+    "amenity",
+    "kallista",
+    "ohare",
+    "pedway",
+    # "townhomes",
+    # "walgreens",
+    # "onsite",
+    # "eastside",
+    # "subzero",
+    # "10915",
+    # "lakeshore",
+    # "miele",
+    # "childrens",
+    # "foyer",
+}
 
 ny_sh_fast_5 = {
     "backsplash",
@@ -376,9 +712,72 @@ ny_sh_fast_5 = {
     # "boast",
     # "purchaser",
 }
-ny_sh_fast_10 = {}
-ny_sh_fast_15 = {}
-ny_sh_fast_20 = {}
+ny_sh_fast_10 = {
+    "tottenville",
+    "backsplash",
+    "grymes",
+    "eik",
+    "sunroom",
+    "dinette",
+    "fenced",
+    "nestled",
+    "renovate",
+    "dongan",
+    # "manicured",
+    # "slider",
+    # "boasting",
+    # "foyer",
+    # "kitchenette",
+    # "2024",
+    # "koi",
+    # "ductless",
+    # "mta",
+    # "rehab",
+}
+ny_sh_fast_15 = {
+    "lirr",
+    "annadale",
+    "tottenville",
+    "backsplash",
+    "sunroom",
+    "culdesac",
+    "costco",
+    "trex",
+    "auburndale",
+    "slider",
+    # "mudroom",
+    # "grymes",
+    # "kitchenette",
+    # "foyer",
+    # "refinished",
+    # "boasting",
+    # "ranch",
+    # "2021",
+    # "hardwood",
+    # "ductless",
+}
+ny_sh_fast_20 = {
+    "lirr",
+    "annadale",
+    "throggs",
+    "backsplash",
+    "costco",
+    "tottenville",
+    "sunroom",
+    "auburndale",
+    "culdesac",
+    "slider",
+    # "dyker",
+    # "westerleigh",
+    # "trex",
+    # "mudroom",
+    # "2021",
+    # "grymes",
+    # "eik",
+    # "kitchenette",
+    # "condo",
+    # "dinette",
+}
 ny_sh_fast_25 = {
     "lirr": {
         "convenience": "The Long Island Rail Road (LIRR) provides easy access to New York City and surrounding areas, making commuting convenient for residents.",
@@ -441,7 +840,28 @@ ny_sh_fast_25 = {
     # "2021"
     # "2017"
 }
-ny_sh_fast_30 = {}
+ny_sh_fast_30 = {
+    "throggs",
+    "backsplash",
+    "8205",
+    "9794",
+    "9792",
+    "costco",
+    "tottenville",
+    "dyker",
+    "westerleigh",
+    "lirr",
+    # "mudroom",
+    # "slider",
+    # "annadale",
+    # "oakwood",
+    # "sunroom",
+    # "woodlawn",
+    # "hvac",
+    # "condo",
+    # "baseboard",
+    # "treelined",
+}
 
 ny_sh_slow_5 = {
     "townhome",
@@ -465,9 +885,72 @@ ny_sh_slow_5 = {
     # "sim",
     # "triplex",
 }
-ny_sh_slow_10 = {}
-ny_sh_slow_15 = {}
-ny_sh_slow_20 = {}
+ny_sh_slow_10 = {
+    "robinwood",
+    "townhome",
+    "annadale",
+    "beechhurst",
+    "fieldston",
+    "laurelton",
+    "driveway",
+    "trex",
+    "ensuite",
+    "barbeque",
+    # "whitestone",
+    # "tankless",
+    # "buildable",
+    # "countertop",
+    # "jacuzzi",
+    # "seagate",
+    # "windowed",
+    # "bedroom",
+    # "bathroom",
+    # "townhouse",
+}
+ny_sh_slow_15 = {
+    "bxm",
+    "robinwood",
+    "metronorth",
+    "fieldston",
+    "inground",
+    "cabinetry",
+    "beechhurst",
+    "laurelton",
+    "jacuzzi",
+    "ensuite",
+    # "townhome",
+    # "driveway",
+    # "riverdale",
+    # "flatbush",
+    # "whitestone",
+    # "gerritsen",
+    # "standout",
+    # "tankless",
+    # "buildable",
+    # "youll",
+}
+ny_sh_slow_20 = {
+    "bxm",
+    "robinwood",
+    "metronorth",
+    "470000",
+    "fieldston",
+    "bbqs",
+    "beechhurst",
+    "townhome",
+    "inground",
+    "cabinetry",
+    # "laurelton",
+    # "buildable",
+    # "youll",
+    # "arrochar",
+    # "maspeth",
+    # "ensuite",
+    # "woodhaven",
+    # "jaccuzi",
+    # "spacious",
+    # "stackable",
+}
 ny_sh_slow_25 = {
     "bxm": {
         "convenience": "Refers to the Bronx Express Bus, providing convenient transportation options to Manhattan and other areas.",
@@ -530,7 +1013,28 @@ ny_sh_slow_25 = {
     # "homebuyers"
     # "spacious"
 }
-ny_sh_slow_30 = {}
+ny_sh_slow_30 = {
+    "bxm",
+    "robinwood",
+    "inground",
+    "metronorth",
+    "470000",
+    "thermador",
+    "youll",
+    "fieldston",
+    "bbqs",
+    "cabinetry",
+    # "beechhurst",
+    # "jaccuzi",
+    # "arrochar",
+    # "seagate",
+    # "buildable",
+    # "townhome",
+    # "laurelton",
+    # "maspeth",
+    # "spacious",
+    # "woodhaven",
+}
 
 ny_ct_fast_5 = {
     "dornbracht",
@@ -554,9 +1058,72 @@ ny_ct_fast_5 = {
     # "rooftop",
     # "trendiest",
 }
-ny_ct_fast_10 = {}
-ny_ct_fast_15 = {}
-ny_ct_fast_20 = {}
+ny_ct_fast_10 = {
+    "dornbracht",
+    "gaggenau",
+    "thermador",
+    "backsplash",
+    "countertop",
+    "backsplashes",
+    "baychester",
+    "peloton",
+    "bertazzoni",
+    "miele",
+    # "bbqs",
+    # "cooktop",
+    # "duravit",
+    # "sonos",
+    # "wifi",
+    # "amenity",
+    # "vrf",
+    # "condominium",
+    # "skyview",
+    # "woodside",
+}
+ny_ct_fast_15 = {
+    "dornbracht",
+    "baychester",
+    "backsplashes",
+    "countertop",
+    "peloton",
+    "backsplash",
+    "gaggenau",
+    "bbqs",
+    "lirr",
+    "bertazzoni",
+    # "throggs",
+    # "thermador",
+    # "parkchester",
+    # "condominium",
+    # "adjmi",
+    # "duravit",
+    # "wifi",
+    # "cooktop",
+    # "vrf",
+    # "skyview",
+}
+ny_ct_fast_20 = {
+    "chelseas",
+    "queensview",
+    "calatravas",
+    "baychester",
+    "dornbracht",
+    "throggs",
+    "lirr",
+    "townhome",
+    "carmellini",
+    "vongerichten",
+    # "bbqs",
+    # "peloton",
+    # "mcnallys",
+    # "reimagined",
+    # "countertop",
+    # "backsplashes",
+    # "parkchester",
+    # "meile",
+    # "condo",
+    # "adjmi",
+}
 ny_ct_fast_25 = {
     "chelseas": {
         "convenience": "Chelsea is a vibrant neighborhood known for its accessibility to public transport, shops, and restaurants.",
@@ -619,7 +1186,28 @@ ny_ct_fast_25 = {
     # "woodside"
     # "douglaston"
 }
-ny_ct_fast_30 = {}
+ny_ct_fast_30 = {
+    "dornbracht",
+    "chelseas",
+    "cullina",
+    "calatravas",
+    "adjmi",
+    "carmellini",
+    "vongerichten",
+    "baychester",
+    "mcnallys",
+    "peloton",
+    # "edenwald",
+    # "reimagined",
+    # "throggs",
+    # "backsplashes",
+    # "townhome",
+    # "condo",
+    # "bbqs",
+    # "queensview",
+    # "manhatta",
+    # "lirr",
+}
 
 ny_ct_slow_5 = {
     "pistilli",
@@ -643,9 +1231,72 @@ ny_ct_slow_5 = {
     #     "youll",
     #     "conditioner",
 }
-ny_ct_slow_10 = {}
-ny_ct_slow_15 = {}
-ny_ct_slow_20 = {}
+ny_ct_slow_10 = {
+    "pistilli",
+    "shorehaven",
+    "bqe",
+    "kissena",
+    "youll",
+    "annadale",
+    "richmondtown",
+    "ditmars",
+    "riverdale",
+    "coop",
+    # "briarwood",
+    # "keyless",
+    # "crotona",
+    # "subletting",
+    # "nysc",
+    # "dinette",
+    # "greenbriar",
+    # "conditioner",
+    # "youre",
+    # "gowanus",
+}
+ny_ct_slow_15 = {
+    "scavolini",
+    "sivec",
+    "pistilli",
+    "youll",
+    "waitlisted",
+    "shorehaven",
+    "bqe",
+    "kissena",
+    "grohe",
+    "hdfc",
+    # "coop",
+    # "waitlist",
+    # "annadale",
+    # "landmarked",
+    # "subletting",
+    # "riverdale",
+    # "reglazed",
+    # "richmondtown",
+    # "ditmars",
+    # "flatiron",
+}
+ny_ct_slow_20 = {
+    "brizo",
+    "scavolini",
+    "sivec",
+    "heatherwick",
+    "youll",
+    "pistilli",
+    "nycs",
+    "waitlisted",
+    "waitlist",
+    "coop",
+    # "nightstands",
+    # "windowed",
+    # "kissena",
+    # "subletting",
+    # "hdfc",
+    # "liebherr",
+    # "riverdale",
+    # "kallista",
+    # "wenge",
+    # "flatiron",
+}
 ny_ct_slow_25 = {
     "waitlisted": {
         "convenience": "Refers to properties that are currently not available but may become available in the future, indicating demand.",
@@ -708,7 +1359,28 @@ ny_ct_slow_25 = {
     # "kissena"
     # "hdfc"
 }
-ny_ct_slow_30 = {}
+ny_ct_slow_30 = {
+    "brizo",
+    "waitlisted",
+    "wifi",
+    "scavolini",
+    "youll",
+    "sivec",
+    "heatherwick",
+    "skyview",
+    "bertazzoni",
+    "newform",
+    # "pistilli",
+    # "santalucia",
+    # "landmarked",
+    # "nycs",
+    # "kissena",
+    # "doorman",
+    # "riverdale",
+    # "coop",
+    # "unionport",
+    # "waitlist",
+}
 
 la_sh_fast_5 = {
     "gladbeck",
@@ -732,9 +1404,72 @@ la_sh_fast_5 = {
     # "hosting",
     # "topanga",
 }
-la_sh_fast_10 = {}
-la_sh_fast_15 = {}
-la_sh_fast_20 = {}
+la_sh_fast_10 = {
+    "hardscaping",
+    "20345",
+    "drywalled",
+    "cariso",
+    "adu",
+    "18232",
+    "bbqs",
+    "backsplash",
+    "gladbeck",
+    "13122",
+    # "tujunga",
+    # "topanga",
+    # "tarzana",
+    # "youre",
+    # "11070",
+    # "northridge",
+    # "trex",
+    # "marmi",
+    # "calabasas",
+    # "backyard",
+}
+la_sh_fast_15 = {
+    "hardscaping",
+    "adu",
+    "20345",
+    "drywalled",
+    "backsplash",
+    "cariso",
+    "18232",
+    "castlebay",
+    "youre",
+    "pacoima",
+    # "gladbeck",
+    # "csun",
+    # "bbqs",
+    # "13122",
+    # "kilkea",
+    # "upgraded",
+    # "fwy",
+    # "topanga",
+    # "10309",
+    # "calabasas",
+}
+la_sh_fast_20 = {
+    "cariso",
+    "adu",
+    "20345",
+    "drywalled",
+    "csun",
+    "18232",
+    "hardscaping",
+    "castlebay",
+    "pacoima",
+    "walkability",
+    # "bbqs",
+    # "tujunga",
+    # "sylmar",
+    # "countertop",
+    # "10836",
+    # "backsplash",
+    # "backyard",
+    # "topanga",
+    # "northridge",
+    # "youre",
+}
 la_sh_fast_25 = {
     "cariso": {
         "convenience": "Refers to a specific neighborhood or area known for its residential amenities and access to local services.",
@@ -797,7 +1532,28 @@ la_sh_fast_25 = {
     # "10836"
     # "tujunga"
 }
-la_sh_fast_30 = {}
+la_sh_fast_30 = {
+    "cariso",
+    "adu",
+    "bbqs",
+    "csun",
+    "sylmar",
+    "walkability",
+    "countertop",
+    "20345",
+    "drywalled",
+    "18232",
+    # "backsplash",
+    # "hardscaping",
+    # "pacoima",
+    # "topanga",
+    # "tujunga",
+    # "northridge",
+    # "nestled",
+    # "backyard",
+    # "recessed",
+    # "castlebay",
+}
 
 la_sh_slow_5 = {
     "thinq",
@@ -821,9 +1577,72 @@ la_sh_slow_5 = {
     # "closet",
     # "gated",
 }
-la_sh_slow_10 = {}
-la_sh_slow_15 = {}
-la_sh_slow_20 = {}
+la_sh_slow_10 = {
+    "thinq",
+    "bertazzoni",
+    "tankless",
+    "milgard",
+    "cabinetry",
+    "noho",
+    "fryman",
+    "wifi",
+    "ensuite",
+    "adus",
+    # "overbid",
+    # "westcliffe",
+    # "sunpower",
+    # "hazelhurst",
+    # "seamlessly",
+    # "sofi",
+    # "stackable",
+    # "carthay",
+    # "beachwood",
+    # "dtla",
+}
+la_sh_slow_15 = {
+    "thinq",
+    "thermador",
+    "bertazzoni",
+    "vickys",
+    "tankless",
+    "calcatta",
+    "ensuite",
+    "leimert",
+    "cabinetry",
+    "milgard",
+    # "fryman",
+    # "westcliffe",
+    # "wifi",
+    # "seamlessly",
+    # "barbeque",
+    # "adus",
+    # "lacma",
+    # "overbid",
+    # "kentwood",
+    # "noho",
+}
+la_sh_slow_20 = {
+    "thermador",
+    "thingq",
+    "bertazzoni",
+    "vickys",
+    "leimert",
+    "cabinetry",
+    "ensuite",
+    "calcatta",
+    "milgard",
+    "brentwoods",
+    # "tankless",
+    # "fryman",
+    # "dtla",
+    # "wifi",
+    # "westcliffe",
+    # "mountaingate",
+    # "seamlessly",
+    # "barbeque",
+    # "beachwood",
+    # "lacma",
+}
 la_sh_slow_25 = {
     "thermador": {
         "convenience": "Refers to high-end kitchen appliances that offer superior performance and efficiency.",
@@ -886,7 +1705,28 @@ la_sh_slow_25 = {
     # "westdale"
     # "kentwood"
 }
-la_sh_slow_30 = {}
+la_sh_slow_30 = {
+    "thermador",
+    "vickys",
+    "bertazzoni",
+    "thinq",
+    "roscomare",
+    "cabinetry",
+    "brentwoods",
+    "haleigh",
+    "ensuite",
+    "tankless",
+    # "leimert",
+    # "seamlessly",
+    # "calcatta",
+    # "dtla",
+    # "beachwood",
+    # "culdesac",
+    # "reimagined",
+    # "westcliffe",
+    # "mountaingate",
+    # "barbeque",
+}
 
 la_ct_fast_5 = {
     "townhome",
@@ -910,9 +1750,72 @@ la_ct_fast_5 = {
     #     "recessed",
     #     "barbeque",
 }
-la_ct_fast_10 = {}
-la_ct_fast_15 = {}
-la_ct_fast_20 = {}
+la_ct_fast_10 = {
+    "townhome",
+    "thinq",
+    "encino",
+    "wifi",
+    "frogtown",
+    "briarcrest",
+    "csun",
+    "sylmar",
+    "countertop",
+    "ensuite",
+    # "patio",
+    # "condo",
+    # "townhomes",
+    # "gated",
+    # "backsplash",
+    # "tarzana",
+    # "hoa",
+    # "wyngate",
+    # "townhouse",
+    # "lacma",
+}
+la_ct_fast_15 = {
+    "townhome",
+    "thinq",
+    "encino",
+    "wifi",
+    "csun",
+    "westfields",
+    "frogtown",
+    "tarzana",
+    "countertop",
+    "townhouse",
+    # "briarcrest",
+    # "sylmar",
+    # "topanga",
+    # "ensuite",
+    # "condo",
+    # "patio",
+    # "backsplash",
+    # "noho",
+    # "gated",
+    # "youll",
+}
+la_ct_fast_20 = {
+    "townhome",
+    "thinq",
+    "encino",
+    "wifi",
+    "csun",
+    "townhouse",
+    "backsplash",
+    "westfields",
+    "topanga",
+    "tarzana",
+    # "sylmar",
+    # "frogtown",
+    # "ensuite",
+    # "briarcrest",
+    # "noho",
+    # "12039",
+    # "patio",
+    # "townhomes",
+    # "12041",
+    # "gated",
+}
 la_ct_fast_25 = {
     "townhome": {
         "convenience": "Townhomes often provide a low-maintenance lifestyle with shared amenities, making them convenient for busy residents.",
@@ -975,7 +1878,28 @@ la_ct_fast_25 = {
     # "12039"
     # "spacious"
 }
-la_ct_fast_30 = {}
+la_ct_fast_30 = {
+    "townhome",
+    "thinq",
+    "backsplash",
+    "townhouse",
+    "encino",
+    "csun",
+    "sylmar",
+    "briarcrest",
+    "topanga",
+    "wifi",
+    # "westfields",
+    # "ensuite",
+    # "frogtown",
+    # "patio",
+    # "gated",
+    # "noho",
+    # "condo",
+    # "12039",
+    # "nestled",
+    # "northridge",
+}
 
 la_ct_slow_5 = {
     "dtla",
@@ -999,9 +1923,72 @@ la_ct_slow_5 = {
     # "bottega",
     # "retrofit",
 }
-la_ct_slow_10 = {}
-la_ct_slow_15 = {}
-la_ct_slow_20 = {}
+la_ct_slow_10 = {
+    "centerpointe",
+    "cinemark",
+    "glenhurst",
+    "teramachi",
+    "mountaingate",
+    "dtla",
+    "gaggenau",
+    "adu",
+    "triplex",
+    "meadowvale",
+    # "wilshire",
+    # "8535",
+    # "westholme",
+    # "lausd",
+    # "playa",
+    # "contigency",
+    # "ralphs",
+    # "subzero",
+    # "cooktop",
+    # "rooftop",
+}
+la_ct_slow_15 = {
+    "centerpointe",
+    "cinemark",
+    "glenhurst",
+    "dtla",
+    "teramachi",
+    "mountaingate",
+    "gaggenau",
+    "westholme",
+    "triplex",
+    "adu",
+    # "ralphs",
+    # "wilshire",
+    # "meadowvale",
+    # "playa",
+    # "rooftop",
+    # "8535",
+    # "concierge",
+    # "cooktop",
+    # "lausd",
+    # "colbath",
+}
+la_ct_slow_20 = {
+    "centerpointe",
+    "cinemark",
+    "brentwoods",
+    "dtla",
+    "gaggenau",
+    "glenhurst",
+    "teramachi",
+    "mountaingate",
+    "walkability",
+    "westholme",
+    # "adu",
+    # "bertazzoni",
+    # "wilshire",
+    # "rooftop",
+    # "triplex",
+    # "playa",
+    # "ralphs",
+    # "meadowvale",
+    # "concierge",
+    # "lutron",
+}
 la_ct_slow_25 = {
     "centerpointe": {
         "convenience": "Centerpointe is a neighborhood known for its residential amenities and access to local services.",
@@ -1064,7 +2051,28 @@ la_ct_slow_25 = {
     # "triplex"
     # "beachport"
 }
-la_ct_slow_30 = {}
+la_ct_slow_30 = {
+    "dtla",
+    "cinemark",
+    "centerpointe",
+    "gaggenau",
+    "brentwoods",
+    "glenhurst",
+    "teramachi",
+    "adu",
+    "walkability",
+    "bbqs",
+    # "lutron",
+    # "90044",
+    # "westholme",
+    # "concierge",
+    # "rooftop",
+    # "ralphs",
+    # "wilshire",
+    # "overbid",
+    # "cooktop",
+    # "azzurra",
+}
 
 # def meanings_to_str(city: str, type: int) -> str:
 #     meanings_dict = {
