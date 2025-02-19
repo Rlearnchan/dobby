@@ -15,7 +15,10 @@ class Classifier:
         # raw models
         if model_type == "logistic":
             self.model = LogisticRegression()
-            self.param_grid = {"C": [0.1, 1, 10], "solver": ["liblinear", "saga"]}
+            self.param_grid = {
+                "C": [0.1, 1, 10], # regularization strength
+                "solver": ["liblinear", "saga"] # optimization algorithm
+            }
         elif model_type == "rf":
             self.model = RandomForestClassifier()
             self.param_grid = {"n_estimators": [50, 100], "max_depth": [None, 10, 20]}
@@ -32,7 +35,10 @@ class Classifier:
         # regarding class imbalance
         elif model_type == "logistic_balance":
             self.model = LogisticRegression(class_weight="balanced")
-            self.param_grid = {"C": [0.1, 1, 10], "solver": ["liblinear", "saga"]}
+            self.param_grid = {
+                "C": [0.1, 1, 10],
+                "solver": ["liblinear", "saga"]
+            }
         elif model_type == "rf_balance":
             self.model = RandomForestClassifier(class_weight="balanced")
             self.param_grid = {"n_estimators": [50, 100], "max_depth": [None, 10, 20]}
