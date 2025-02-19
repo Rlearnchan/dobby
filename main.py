@@ -41,7 +41,7 @@ else:
 
 
 # 3. llm estimation
-thresholds = [0.25]  # [0.05, 0.1, 0.15, 0.2, 0.25, 0.3]
+thresholds = [0.25] # [0.05, 0.1, 0.15, 0.2, 0.25, 0.3]
 
 for th_idx, th_val in enumerate(thresholds):
     dir = f"result/llm_{th_val}_result.csv"
@@ -50,16 +50,16 @@ for th_idx, th_val in enumerate(thresholds):
     else:
         print("Executing LLM")
         from chain import (
-            basic_llm,
-            build_basic_system,
+            zillow_to_str,
+            build_basic_system, 
             build_basic_template,
-            build_full_system,
-            build_full_template,
+            basic_llm,
             build_words_system,
             build_words_template,
-            full_llm,
             words_llm,
-            zillow_to_str,
+            build_full_system,
+            build_full_template,
+            full_llm,
         )
 
         results = {}
@@ -73,9 +73,7 @@ for th_idx, th_val in enumerate(thresholds):
             )
 
             # 3-1. basic
-            basic_system = build_basic_system(
-                sales_speed, th_idx, y_test["city"], y_test["single"]
-            )
+            basic_system = build_basic_system(sales_speed, th_idx, y_test["city"], y_test["single"])
             basic_template = build_basic_template(basic_system)
             basic_grader = basic_template | basic_llm
             basic_result = basic_grader.invoke(
@@ -87,12 +85,8 @@ for th_idx, th_val in enumerate(thresholds):
             print(f"Basic: {basic_result}")
 
             # 3-2. with words
-            words_system = build_words_system(
-                sales_speed, th_idx, y_test["city"], y_test["single"]
-            )
-            words_template = build_words_template(
-                row["city"], row["single"], words_system, th_val
-            )
+            words_system = build_words_system(sales_speed, th_idx, y_test["city"], y_test["single"])
+            words_template = build_words_template(row["city"], row["single"], words_system, th_val)
             words_grader = words_template | words_llm
             words_result = words_grader.invoke(
                 input={
@@ -103,12 +97,8 @@ for th_idx, th_val in enumerate(thresholds):
             print(f"Words: {words_result}")
 
             # 3-3. with words & meanings
-            full_system = build_full_system(
-                sales_speed, th_idx, y_test["city"], y_test["single"]
-            )
-            full_template = build_full_template(
-                row["city"], row["single"], full_system, th_val, th_idx
-            )
+            full_system = build_full_system(sales_speed, th_idx, y_test["city"], y_test["single"])
+            full_template = build_full_template(row["city"], row["single"], full_system, th_val, th_idx)
             full_grader = full_template | full_llm
             full_result = full_grader.invoke(
                 input={
@@ -127,14 +117,10 @@ for th_idx, th_val in enumerate(thresholds):
                 # ),
                 "GT_class": (
                     "fast"
-                    if y_test["duration"][idx]
-                    <= sales_speed[row["city"]][row["single"]]["fast"][th_idx]
-                    else (
-                        "slow"
-                        if y_test["duration"][idx]
-                        >= sales_speed[row["city"]][row["single"]]["slow"][th_idx]
-                        else "moderate"
-                    )
+                    if y_test["duration"][idx] <= sales_speed[row["city"]][row["single"]]["fast"][th_idx]
+                    else "slow"
+                    if y_test["duration"][idx] >= sales_speed[row["city"]][row["single"]]["slow"][th_idx]
+                    else "moderate"
                 ),
                 "basic_tom": basic_result.TOM,
                 "words_tom": words_result.TOM,
@@ -150,6 +136,7 @@ for th_idx, th_val in enumerate(thresholds):
         output_file = f"result/llm_{th_val}_result.csv"
         results_df.to_csv(output_file, index_label="zpid")
         print(f"LLM Results saved to {output_file}")
+
 
     # 3-4. evaluate
     def evaluate_llm(llm_result, prediction_column):
@@ -178,8 +165,10 @@ for th_idx, th_val in enumerate(thresholds):
             "best_params": None,
         }
 
+
     # 4. classical ml prediction
     print("Execute ML Prediction")
+
 
     # 4-1. simple pre-process
     # def create_binary_target(X, y, sales_speed):
@@ -196,7 +185,7 @@ for th_idx, th_val in enumerate(thresholds):
     #             binary_target.append("no")
 
     #     return pd.Series(binary_target)
-
+    
     def create_multi_target(X, y, sales_speed):
         multi_target = []
 
@@ -213,12 +202,13 @@ for th_idx, th_val in enumerate(thresholds):
             else:
                 multi_target.append("moderate")
 
+
     def preprocess_data(X, y):
         y = y["duration"]
         # y = create_binary_target(X, y, sales_speed)
         y = create_multi_target(X, y, sales_speed)
         # y = y.map({"no": 0, "yes": 1})
-        y = y.map({"slow": 0, "moderate": 1, "fast": 2})
+        y = y.map({"fast": 0, "moderate": 1, "slow": 2})
         X = X.drop(columns=["address"])
         X = pd.get_dummies(X, columns=["city", "submarket"])
         X.columns = X.columns.str.replace(" ", "_")
@@ -226,8 +216,10 @@ for th_idx, th_val in enumerate(thresholds):
 
         return X, y
 
+
     X_train, y_train = preprocess_data(X_train, y_train)
     X_test, y_test = preprocess_data(X_test, y_test)
+
 
     for model_type in [
         "logistic",
@@ -268,6 +260,7 @@ for th_idx, th_val in enumerate(thresholds):
             "feature_importance": feature_importance,
             "best_params": classifier.best_params,
         }
+
 
     # 5. final output
     output_dir = f"result/eval_{th_val}_results.txt"
