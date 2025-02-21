@@ -15,23 +15,7 @@ load_dotenv()
 
 print("Hello Zillow")
 
-# 1. prepare data
-print("Load & Split Data")
-zillow = pd.read_csv("dataset/2. zillow_cleaned.csv")
-(
-    X_train,
-    X_test,
-    y_train,
-    y_test,
-    desc_train,
-    desc_test,
-    zpid_train,
-    zpid_test,
-    df_words,
-) = split_data()
-
-
-# 2. extract words
+# 1. extract words
 dir = "dataset/word_counts"
 if not os.path.exists(dir):
     print("Extracting Discriminative Words")
@@ -40,10 +24,25 @@ else:
     print(f"The directory '{dir}' already exists. No need to extract words.")
 
 
-# 3. llm estimation
-thresholds = [0.25] # [0.05, 0.1, 0.15, 0.2, 0.25, 0.3]
+# 2. llm estimation
+thresholds = [0.05, 0.1, 0.15, 0.2, 0.25, 0.3]
 
 for th_idx, th_val in enumerate(thresholds):
+
+    # 2.1 prepare data
+    zillow = pd.read_csv("dataset/2. zillow_cleaned.csv")
+    (
+        X_train,
+        X_test,
+        y_train,
+        y_test,
+        desc_train,
+        desc_test,
+        zpid_train,
+        zpid_test,
+        df_words,
+    ) = split_data()
+
     dir = f"result/llm_{th_val}_result.csv"
     if os.path.exists(dir):
         print(f"{dir} already exists. Skipping LLM estimation.")
@@ -68,12 +67,20 @@ for th_idx, th_val in enumerate(thresholds):
             X_test.iterrows(), desc="Generating Responses", total=len(X_test)
         ):
 
-            print(
-                f"\nProperty ID: {zpid_test["zpid"][idx]}, {y_test["duration"][idx]} Days"
+            gt_class = (
+                "fast"
+                if y_test["duration"][idx] <= sales_speed[row["city"]][row["single"]]["fast"][th_idx]
+                else "slow"
+                if y_test["duration"][idx] >= sales_speed[row["city"]][row["single"]]["slow"][th_idx]
+                else "moderate"
             )
 
-            # 3-1. basic
-            basic_system = build_basic_system(sales_speed, th_idx, y_test["city"], y_test["single"])
+            print(
+                f"\nProperty ID: {zpid_test["zpid"][idx]}, {y_test["duration"][idx]} Days ({gt_class} {int(th_val*100)}%)"
+            )
+
+            # 2-2. basic
+            basic_system = build_basic_system(sales_speed, th_idx, row["city"], row["single"])
             basic_template = build_basic_template(basic_system)
             basic_grader = basic_template | basic_llm
             basic_result = basic_grader.invoke(
@@ -84,8 +91,8 @@ for th_idx, th_val in enumerate(thresholds):
             )
             print(f"Basic: {basic_result}")
 
-            # 3-2. with words
-            words_system = build_words_system(sales_speed, th_idx, y_test["city"], y_test["single"])
+            # 2-3. with words
+            words_system = build_words_system(sales_speed, th_idx, row["city"], row["single"])
             words_template = build_words_template(row["city"], row["single"], words_system, th_val)
             words_grader = words_template | words_llm
             words_result = words_grader.invoke(
@@ -96,8 +103,8 @@ for th_idx, th_val in enumerate(thresholds):
             )
             print(f"Words: {words_result}")
 
-            # 3-3. with words & meanings
-            full_system = build_full_system(sales_speed, th_idx, y_test["city"], y_test["single"])
+            # 2-4. with words & meanings
+            full_system = build_full_system(sales_speed, th_idx, row["city"], row["single"])
             full_template = build_full_template(row["city"], row["single"], full_system, th_val, th_idx)
             full_grader = full_template | full_llm
             full_result = full_grader.invoke(
@@ -138,7 +145,7 @@ for th_idx, th_val in enumerate(thresholds):
         print(f"LLM Results saved to {output_file}")
 
 
-    # 3-4. evaluate
+    # 2-5. evaluate
     def evaluate_llm(llm_result, prediction_column):
         # y_true = llm_result["GT_bool"]
         y_true = llm_result["GT_class"]
@@ -166,11 +173,11 @@ for th_idx, th_val in enumerate(thresholds):
         }
 
 
-    # 4. classical ml prediction
+    # 3. classical ml prediction
     print("Execute ML Prediction")
 
 
-    # 4-1. simple pre-process
+    # 3-1. simple pre-process
     # def create_binary_target(X, y, sales_speed):
     #     binary_target = []
 
@@ -201,6 +208,8 @@ for th_idx, th_val in enumerate(thresholds):
                 multi_target.append("slow")
             else:
                 multi_target.append("moderate")
+            
+        return pd.Series(multi_target)
 
 
     def preprocess_data(X, y):
@@ -227,20 +236,20 @@ for th_idx, th_val in enumerate(thresholds):
         "rf",
         "rf_balance",
         "xgb",
-        "xgb_balance",
+        # "xgb_balance",
         # "lightgbm", "lightgbm_balance",
     ]:
 
-        # 4-2. model select & fit
+        # 3-2. model select & fit
         classifier = Classifier(model_type=model_type)
         classifier.fit(X_train, y_train)
 
-        # 4-3. predict & evaluate
+        # 3-3. predict & evaluate
         accuracy, report = classifier.evaluate(X_test, y_test)
         print(f"Accuracy for {model_type}: {accuracy:.4f}")
         print(f"Classification Report:\n{report}")
 
-        # 4-4. feature importance
+        # 3-4. feature importance
         if model_type == "logistic":
             importance = np.abs(classifier.model.coef_[0])
         elif model_type == "rf":
@@ -262,7 +271,7 @@ for th_idx, th_val in enumerate(thresholds):
         }
 
 
-    # 5. final output
+    # 4. final output
     output_dir = f"result/eval_{th_val}_results.txt"
     with open(output_dir, "w") as f:
         for model_type, result in results_summary.items():

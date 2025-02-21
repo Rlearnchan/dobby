@@ -232,18 +232,14 @@ if __name__ == "__main__":
 
     zillow = pd.read_csv("dataset/2. zillow_cleaned.csv")
     sample = zillow.iloc[0]
-    th_idx = 4  # 0(5%) to 5(30%)
-    th_val = 0.25  # [0.05, 0.1, 0.15, 0.2, 0.25, 0.3]
+    th_idx = 3  # 0(5%) to 5(30%)
+    th_val = 0.2  # [0.05, 0.1, 0.15, 0.2, 0.25, 0.3]
     gt_class = (
         "fast"
-        if sample["duration"]
-        <= sales_speed[sample["city"]][sample["single"]]["fast"][th_idx]
-        else (
-            "slow"
-            if sample["duration"]
-            <= sales_speed[sample["city"]][sample["single"]]["slow"][th_idx]
-            else "moderate"
-        )
+        if sample["duration"] <= sales_speed[sample["city"]][sample["single"]]["fast"][th_idx]
+        else "slow"
+        if sample["duration"] >= sales_speed[sample["city"]][sample["single"]]["slow"][th_idx]
+        else "moderate" 
     )
 
     print(

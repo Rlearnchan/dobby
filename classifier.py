@@ -39,11 +39,9 @@ class Classifier:
         elif model_type == "rf_balance":
             self.model = RandomForestClassifier(class_weight="balanced")
             self.param_grid = {"n_estimators": [50, 100], "max_depth": [None, 10, 20]}
-        elif model_type == "xgb_balance":
-            self.model = XGBClassifier(
-                scale_pos_weight=3
-            )  # almost 3 (fast-selling 25%)
-            self.param_grid = {"n_estimators": [50, 100], "learning_rate": [0.01, 0.1]}
+        # elif model_type == "xgb_balance":
+        #     self.model = XGBClassifier()
+        #     self.param_grid = {"n_estimators": [50, 100], "learning_rate": [0.01, 0.1]}
         # elif model_type == 'lightgbm_balance':
         #     self.model = lgb.LGBMClassifier(scale_pos_weight=3, force_row_wise=True)
         #     self.param_grid = {

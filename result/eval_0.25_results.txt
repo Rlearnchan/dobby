@@ -1,0 +1,167 @@
+Model: basic_tom
+Accuracy: 0.4113
+Report:
+              precision    recall  f1-score   support
+
+        fast       0.24      0.34      0.28       493
+    moderate       0.52      0.59      0.56      1043
+        slow       0.31      0.10      0.15       487
+
+    accuracy                           0.41      2023
+   macro avg       0.36      0.34      0.33      2023
+weighted avg       0.40      0.41      0.39      2023
+
+
+Model: words_tom
+Accuracy: 0.3248
+Report:
+              precision    recall  f1-score   support
+
+        fast       0.25      0.60      0.35       493
+    moderate       0.51      0.25      0.34      1043
+        slow       0.31      0.20      0.24       487
+
+    accuracy                           0.32      2023
+   macro avg       0.36      0.35      0.31      2023
+weighted avg       0.40      0.32      0.32      2023
+
+
+Model: full_tom
+Accuracy: 0.2912
+Report:
+              precision    recall  f1-score   support
+
+        fast       0.25      0.74      0.37       493
+    moderate       0.51      0.16      0.24      1043
+        slow       0.27      0.12      0.17       487
+
+    accuracy                           0.29      2023
+   macro avg       0.34      0.34      0.26      2023
+weighted avg       0.39      0.29      0.25      2023
+
+
+Model: logistic
+Accuracy: 0.5156
+Report:
+              precision    recall  f1-score   support
+
+           0       1.00      0.00      0.00       493
+           1       0.52      1.00      0.68      1043
+           2       1.00      0.00      0.00       487
+
+    accuracy                           0.52      2023
+   macro avg       0.84      0.33      0.23      2023
+weighted avg       0.75      0.52      0.35      2023
+
+Feature Importance:
+submarket_San_Fernando_Valley 0.0005
+age 0.0004
+bedroom 0.0004
+submarket_West_LA 0.0003
+parking 0.0002
+
+Best Parameters:
+C 0.1
+solver saga
+
+
+Model: logistic_balance
+Accuracy: 0.4676
+Report:
+              precision    recall  f1-score   support
+
+           0       0.38      0.32      0.34       493
+           1       0.55      0.60      0.58      1043
+           2       0.35      0.33      0.34       487
+
+    accuracy                           0.47      2023
+   macro avg       0.42      0.42      0.42      2023
+weighted avg       0.46      0.47      0.46      2023
+
+Feature Importance:
+submarket_San_Fernando_Valley 0.0005
+age 0.0004
+bedroom 0.0004
+submarket_West_LA 0.0003
+parking 0.0002
+
+Best Parameters:
+C 0.1
+solver liblinear
+
+
+Model: rf
+Accuracy: 0.5284
+Report:
+              precision    recall  f1-score   support
+
+           0       0.45      0.15      0.23       493
+           1       0.53      0.90      0.67      1043
+           2       0.55      0.10      0.18       487
+
+    accuracy                           0.53      2023
+   macro avg       0.51      0.39      0.36      2023
+weighted avg       0.52      0.53      0.44      2023
+
+Feature Importance:
+living 0.2542
+age 0.2181
+parking 0.0909
+bedroom 0.0891
+bathroom 0.0889
+
+Best Parameters:
+max_depth 10
+n_estimators 100
+
+
+Model: rf_balance
+Accuracy: 0.4513
+Report:
+              precision    recall  f1-score   support
+
+           0       0.34      0.31      0.33       493
+           1       0.54      0.59      0.57      1043
+           2       0.32      0.29      0.30       487
+
+    accuracy                           0.45      2023
+   macro avg       0.40      0.40      0.40      2023
+weighted avg       0.44      0.45      0.45      2023
+
+Feature Importance:
+living 0.2542
+age 0.2181
+parking 0.0909
+bedroom 0.0891
+bathroom 0.0889
+
+Best Parameters:
+max_depth 20
+n_estimators 100
+
+
+Model: xgb
+Accuracy: 0.5121
+Report:
+              precision    recall  f1-score   support
+
+           0       0.43      0.18      0.25       493
+           1       0.53      0.86      0.65      1043
+           2       0.42      0.11      0.17       487
+
+    accuracy                           0.51      2023
+   macro avg       0.46      0.38      0.36      2023
+weighted avg       0.48      0.51      0.44      2023
+
+Feature Importance:
+submarket_San_Fernando_Valley 0.1237
+city_LA 0.0835
+submarket_West_LA 0.0703
+submarket_South_Bay 0.0613
+submarket_Staten_Island 0.0606
+
+Best Parameters:
+learning_rate 0.1
+n_estimators 50
+
+

@@ -1,0 +1,167 @@
+Model: basic_tom
+Accuracy: 0.6347
+Report:
+              precision    recall  f1-score   support
+
+        fast       0.08      0.17      0.11       196
+    moderate       0.81      0.76      0.78      1632
+        slow       0.16      0.09      0.11       195
+
+    accuracy                           0.63      2023
+   macro avg       0.35      0.34      0.34      2023
+weighted avg       0.68      0.63      0.65      2023
+
+
+Model: words_tom
+Accuracy: 0.3495
+Report:
+              precision    recall  f1-score   support
+
+        fast       0.08      0.44      0.14       196
+    moderate       0.80      0.36      0.49      1632
+        slow       0.15      0.19      0.17       195
+
+    accuracy                           0.35      2023
+   macro avg       0.35      0.33      0.27      2023
+weighted avg       0.67      0.35      0.43      2023
+
+
+Model: full_tom
+Accuracy: 0.2976
+Report:
+              precision    recall  f1-score   support
+
+        fast       0.08      0.54      0.14       196
+    moderate       0.81      0.28      0.42      1632
+        slow       0.18      0.16      0.17       195
+
+    accuracy                           0.30      2023
+   macro avg       0.36      0.33      0.25      2023
+weighted avg       0.68      0.30      0.37      2023
+
+
+Model: logistic
+Accuracy: 0.8067
+Report:
+              precision    recall  f1-score   support
+
+           0       1.00      0.00      0.00       196
+           1       0.81      1.00      0.89      1632
+           2       1.00      0.00      0.00       195
+
+    accuracy                           0.81      2023
+   macro avg       0.94      0.33      0.30      2023
+weighted avg       0.84      0.81      0.72      2023
+
+Feature Importance:
+submarket_San_Fernando_Valley 0.7562
+submarket_West_LA 0.5629
+submarket_Hollywood/Wilshire 0.3457
+city_LA 0.3298
+submarket_South 0.2998
+
+Best Parameters:
+C 0.1
+solver liblinear
+
+
+Model: logistic_balance
+Accuracy: 0.8008
+Report:
+              precision    recall  f1-score   support
+
+           0       1.00      0.00      0.00       196
+           1       0.81      0.99      0.89      1632
+           2       0.22      0.03      0.05       195
+
+    accuracy                           0.80      2023
+   macro avg       0.67      0.34      0.31      2023
+weighted avg       0.77      0.80      0.72      2023
+
+Feature Importance:
+submarket_San_Fernando_Valley 0.7562
+submarket_West_LA 0.5629
+submarket_Hollywood/Wilshire 0.3457
+city_LA 0.3298
+submarket_South 0.2998
+
+Best Parameters:
+C 0.1
+solver liblinear
+
+
+Model: rf
+Accuracy: 0.8067
+Report:
+              precision    recall  f1-score   support
+
+           0       1.00      0.00      0.00       196
+           1       0.81      1.00      0.89      1632
+           2       1.00      0.00      0.00       195
+
+    accuracy                           0.81      2023
+   macro avg       0.94      0.33      0.30      2023
+weighted avg       0.84      0.81      0.72      2023
+
+Feature Importance:
+living 0.2936
+age 0.2372
+parking 0.1029
+bedroom 0.1023
+bathroom 0.0900
+
+Best Parameters:
+max_depth 10
+n_estimators 100
+
+
+Model: rf_balance
+Accuracy: 0.7785
+Report:
+              precision    recall  f1-score   support
+
+           0       0.16      0.05      0.07       196
+           1       0.81      0.95      0.88      1632
+           2       0.25      0.07      0.11       195
+
+    accuracy                           0.78      2023
+   macro avg       0.41      0.35      0.35      2023
+weighted avg       0.69      0.78      0.72      2023
+
+Feature Importance:
+living 0.2936
+age 0.2372
+parking 0.1029
+bedroom 0.1023
+bathroom 0.0900
+
+Best Parameters:
+max_depth None
+n_estimators 100
+
+
+Model: xgb
+Accuracy: 0.8062
+Report:
+              precision    recall  f1-score   support
+
+           0       1.00      0.01      0.01       196
+           1       0.81      1.00      0.89      1632
+           2       0.00      0.00      0.00       195
+
+    accuracy                           0.81      2023
+   macro avg       0.60      0.33      0.30      2023
+weighted avg       0.75      0.81      0.72      2023
+
+Feature Importance:
+submarket_San_Fernando_Valley 0.1019
+city_LA 0.0610
+submarket_South_Bay 0.0514
+submarket_Staten_Island 0.0508
+submarket_Hollywood/Wilshire 0.0455
+
+Best Parameters:
+learning_rate 0.1
+n_estimators 50
+
+
