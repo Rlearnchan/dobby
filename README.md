@@ -6,7 +6,7 @@
 - **텍스트 전처리**: `text_preprocess.py`에서 Realtor가 작성한 설명을 정제합니다.
 - **차별적 단어 추출**: `extract_words.py`에서 빠르게 혹은 느리게 팔리는 집에 자주 등장하는 단어를 수집합니다.
 - **LLM 기반 분류**: `chain.py`에서 OpenAI 모델을 사용하여 'fast', 'moderate', 'slow' 세 단계로 TOM을 예측합니다.
-- **전통적 ML 분류기**: `classifier.py`에 Logistic Regression, Random Forest, XGBoost 등을 구현하여 성능을 비교합니다.
+- **전통적 ML 분류기**: `classifier.py`에 Logistic Regression, Random Forest, XGBoost 등을 구현해 성능을 비교합니다.
 - **전체 파이프라인**: `main.py`에서 단어 추출, LLM 예측, 모델 평가, ML 학습을 순차적으로 수행합니다.
 
 ## 요구 사항
